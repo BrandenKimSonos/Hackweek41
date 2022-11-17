@@ -1,0 +1,6 @@
+downloaded-client-config .ovpn
+Hackweek41SSHKeyPair.pem
+redis-stable.tar.gz
+
+redis-stable/**
+redis-stable
