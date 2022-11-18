@@ -16,7 +16,7 @@ import (
 	"github.com/go-redis/redis"
 )
 
-var NUM_ITERATIONS = 1000000
+var NUM_ITERATIONS = 100000
 
 var db_user = utils.GoDotEnvVariable("DB_USER")
 var db_pass = utils.GoDotEnvVariable("DB_PASSWORD")

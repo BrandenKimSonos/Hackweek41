@@ -14,12 +14,6 @@ import (
 
 
 func main() {
-	// _, err := config.LoadDefaultConfig(context.TODO(), config.WithSharedConfigProfile("858585593831_Dev-PowerUser"), config.WithRegion("us-east-1"))
-
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-
 	if len(os.Args) < 2 {
 		log.Fatal("Not enough arguments! Please specify either `prewarm` or `benchmark`. ex. `go run . benchmark")
 	}
@@ -27,11 +21,11 @@ func main() {
 	option := os.Args[1]
 
 	if option == "benchmark" {
-		// benchmark.BlowingUpDBConnections()
+		benchmark.BlowingUpDBConnections()
 		// benchmark.BlowingUpRedisConnections()
 		// benchmark.SingleRoutineQuery()
 		// benchmark.MultiThreadedQuery()
-		benchmark.TestConcurrencyLimits()
+		// benchmark.TestConcurrencyLimits()
 	} else if (option == "prewarm") {
 		prewarm.MainDriver()
 	} else {
