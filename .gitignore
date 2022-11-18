@@ -4,3 +4,5 @@ redis-stable.tar.gz
 
 redis-stable/**
 redis-stable
+
+.env

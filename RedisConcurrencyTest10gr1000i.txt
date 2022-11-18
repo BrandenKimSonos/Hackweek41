@@ -1,0 +1,10 @@
+[REDIS]: Iteration 0 Successes: 1000 Failures: 0
+[REDIS]: Iteration 9 Successes: 1000 Failures: 0
+[REDIS]: Iteration 2 Successes: 1000 Failures: 0
+[REDIS]: Iteration 8 Successes: 1000 Failures: 0
+[REDIS]: Iteration 1 Successes: 1000 Failures: 0
+[REDIS]: Iteration 5 Successes: 1000 Failures: 0
+[REDIS]: Iteration 4 Successes: 1000 Failures: 0
+[REDIS]: Iteration 7 Successes: 1000 Failures: 0
+[REDIS]: Iteration 3 Successes: 1000 Failures: 0
+[REDIS]: Iteration 6 Successes: 1000 Failures: 0

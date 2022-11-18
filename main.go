@@ -1,32 +1,40 @@
 package main
 
 import (
-	"context"
 	"log"
+	"os"
 
-	"github.com/aws/aws-sdk-go-v2/aws"
-	"github.com/aws/aws-sdk-go-v2/config"
-	"github.com/aws/aws-sdk-go-v2/service/s3"
+	// "github.com/aws/aws-sdk-go-v2/config"
+	_ "github.com/denisenkom/go-mssqldb"
+
+	"hackweek41/benchmark"
+	"hackweek41/prewarm"
 )
 
+
+
 func main() {
-	cfg, err := config.LoadDefaultConfig(context.TODO(), config.WithSharedConfigProfile("858585593831_Dev-PowerUser"), config.WithRegion("us-east-1"))
+	// _, err := config.LoadDefaultConfig(context.TODO(), config.WithSharedConfigProfile("858585593831_Dev-PowerUser"), config.WithRegion("us-east-1"))
 
-	if err != nil {
-		log.Fatal(err)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+
+	if len(os.Args) < 2 {
+		log.Fatal("Not enough arguments! Please specify either `prewarm` or `benchmark`. ex. `go run . benchmark")
 	}
 
-	client := s3.NewFromConfig(cfg)
+	option := os.Args[1]
 
-	output, err := client.ListObjectsV2(context.TODO(), &s3.ListObjectsV2Input{
-		Bucket: aws.String("release-int.sonos.com"),
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println("first page results:")
-	for _, object := range output.Contents {
-		log.Printf("key=%s size=%d", aws.ToString(object.Key), object.Size)
+	if option == "benchmark" {
+		// benchmark.BlowingUpDBConnections()
+		// benchmark.BlowingUpRedisConnections()
+		// benchmark.SingleRoutineQuery()
+		// benchmark.MultiThreadedQuery()
+		benchmark.TestConcurrencyLimits()
+	} else if (option == "prewarm") {
+		prewarm.MainDriver()
+	} else {
+		log.Fatal("Invalid choice! Must be either `prewarm` or `benchmark`")
 	}
 }

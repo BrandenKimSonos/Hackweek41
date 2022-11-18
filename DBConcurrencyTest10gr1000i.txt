@@ -1,0 +1,10 @@
+[DB]: Iteration 5 Successes: 34 Failures: 966
+[DB]: Iteration 1 Successes: 41 Failures: 959
+[DB]: Iteration 6 Successes: 35 Failures: 965
+[DB]: Iteration 0 Successes: 28 Failures: 972
+[DB]: Iteration 8 Successes: 40 Failures: 960
+[DB]: Iteration 9 Successes: 35 Failures: 965
+[DB]: Iteration 4 Successes: 32 Failures: 968
+[DB]: Iteration 2 Successes: 27 Failures: 973
+[DB]: Iteration 7 Successes: 46 Failures: 954
+[DB]: Iteration 3 Successes: 36 Failures: 964
